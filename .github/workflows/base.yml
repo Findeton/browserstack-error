@@ -19,6 +19,12 @@ jobs:
   test-browserstack:
     runs-on: ubuntu-20.04
     steps:
+
+      - name: 'Test github sha'
+        env:
+          GIT_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+        run: echo $GIT_COMMIT_SHA  # See sample test script above
+
       # https://www.browserstack.com/docs/automate/selenium/github-actions#sample-github-workflow-showing-a-browserstack-test 
       - name: 'BrowserStack Env Setup'  # Invokes the setup-env action
         uses: browserstack/github-actions/setup-env@master
