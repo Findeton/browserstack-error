@@ -23,7 +23,8 @@ jobs:
       - name: 'Test github sha'
         env:
           GIT_COMMIT_SHA: ${{ github.event.head_commit.sha }}
-        run: echo 'FF' && GIT_COMMIT_SHA=$GIT_COMMIT_SHA echo $GIT_COMMIT_SHA
+          GIT_COMMIT_SHA2:  GG
+        run: echo 'FF' && echo $GIT_COMMIT_SHA2
 
       # https://www.browserstack.com/docs/automate/selenium/github-actions#sample-github-workflow-showing-a-browserstack-test 
       - name: 'BrowserStack Env Setup'  # Invokes the setup-env action
