@@ -19,7 +19,7 @@ jobs:
   test-browserstack:
     runs-on: ubuntu-20.04
     steps:
-
+      - uses: actions/checkout@v3.0.2
       - name: 'Test github sha'
         env:
           GIT_COMMIT_SHA: ${{ github.event.head_commit.sha }}
